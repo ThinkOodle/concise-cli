@@ -19,7 +19,7 @@ cliparse.parse(cliparse.cli({
           cliparse.argument('output', { description: 'Output CSS file' })
         ]
       }, (params) => {
-        fs.writeFile(params.args[1], compile(params.args[0]), (err) => {
+        fs.writeFile(params.args[1], compile(params.args[0], params.args[1]), (err) => {
           if (err) {
             throw err;
           }
